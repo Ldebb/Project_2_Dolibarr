@@ -1,17 +1,15 @@
-# Dolibarr + MariaDB
+This is a simple project to deploy a web application + database (Dolibarr + MariaDB) through a Docker:
 
-- Je build mon image Dolibarr :
-docker build -t dolibarr .
+I- Buid docker image for Dolibarr :
+connad: docker build -t dolibarr .
 
-- Je run mon docker Dolibarr :
+II- Run docker image for the Dolibarr :
 docker run -it -d --name doli -p80:80 dolibarr:latest 
 
-- Je tag mon build pour le push dans le registry docker hub :
+III- Tag my build image to push it in the registry docker hub :
 docker build -t devopsup/dolibarr:faurecia .
 
-- la connexion au registry :
+IV- Connect to the registry hub and push the image:
 docker login --username=devopsup
-
-- le push dans registry : 
 docker push devopsup/dolibarr:faurecia
 
